@@ -29,13 +29,14 @@ tags$script(src='https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js')
 
  // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyBI9VmszlGNaf67kNrvh-WLwbzcxTCKfAU",
-    authDomain: "jspsych-9b502.firebaseapp.com",
-    databaseURL: "https://jspsych-9b502.firebaseio.com",
-    projectId: "jspsych-9b502",
-    storageBucket: "jspsych-9b502.appspot.com",
-    messagingSenderId: "892827996202",
-    appId: "1:892827996202:web:b66061ac161f1781"
+    apiKey: "AIzaSyCuXEf6oFVHvYR8ty8iJlyco8gK5yLx5F8",
+    authDomain: "alpa-quest.firebaseapp.com",
+    databaseURL: "https://alpa-quest-default-rtdb.firebaseio.com",
+    projectId: "alpa-quest",
+    storageBucket: "alpa-quest.appspot.com",
+    messagingSenderId: "418307807658",
+    appId: "1:418307807658:web:d5ab9fc6311f12cf5b73d3",
+    measurementId: "G-VCM6BCPTTH"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
@@ -73,7 +74,7 @@ tagList(
 tags$script(src='jspsych-6/jspsych.js'),
 tags$script(src='jspsych-6/plugins/jspsych-html-keyboard-response.js'),
 tags$script(src='jspsych-6/plugins/jspsych-html-keyboard-multiple-response.js'),
-tags$script(src='xprmntr/xprmntr.js')
+tags$script(src='jspsych-6/xprmntr.js')
 )
 ```
 
@@ -81,9 +82,12 @@ tags$script(src='xprmntr/xprmntr.js')
 
 ```{r, results="asis"}
 # Define stimuli in R, output as <script> 
+# install.packages("devtools")
+# devtools::install_github("djnavarro/xprmntr")
+# devtools::install_github("CrumpLab/jspsychr")
 library(xprmntr)
 library(dplyr)
-
+library(jspsychr)
 # create dataframe to define stimuli
 stroop_stim <- data.frame( stimulus = length(4),
                            word = rep(c("red","green","blue","yellow")),
